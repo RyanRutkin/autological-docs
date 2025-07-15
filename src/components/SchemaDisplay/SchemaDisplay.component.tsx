@@ -1,14 +1,25 @@
-import { FC } from "react";
+import { FC, useContext, useEffect, useRef } from "react";
 import { JsonSchema, ValueOf } from "../../types/types";
 import './SchemaDisplay.component.css';
 import { JsonSchemaProperty } from "@ryanrutkin/autological-schema";
 import { AppHashLink } from "../AppHashLink/AppHaskLink.component";
+import { AppFocusContext } from "../../contexts/AppFocus.context";
 
 export const SchemaDisplay: FC<{
     schemaId: string;
     schema: Partial<JsonSchema>;
+    schemaType?: string;
     isChild?: boolean;
-}> = ({ schemaId, schema, isChild }) => {
+}> = ({ schemaId, schema, schemaType, isChild }) => {
+    const { focusedItem } = useContext(AppFocusContext);
+    const itemRef = useRef<null | HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (focusedItem && focusedItem === schemaType && itemRef.current) {
+            itemRef.current.scrollIntoView()
+        }
+    }, [focusedItem, schemaType]);
+
     function getSchemaPropertyDetailItemValueEntry(key: string, value: string) {
         return (
             <div className={ `app-schema-property-detail-value-entry ${ key === 'const' || key === 'enum' ? 'app-schema-property-detail-value-literal' : ''}` } >
@@ -99,7 +110,7 @@ export const SchemaDisplay: FC<{
         )
     }
     return (
-        <div className={ `app-schema ${ isChild ? 'app-schema-is-child' : '' }` } >
+        <div key={schemaId} className={ `app-schema ${ isChild ? 'app-schema-is-child' : '' }` } ref={itemRef} >
             {
                 schema.title
                 ? <div className="app-schema-title" >{ schema.title }</div>

@@ -50,9 +50,10 @@ export const DocsPage: FC = () => {
                     <div id="specification" >
                         {
                             schemas.map(schemaDef => (
-                                <SchemaDisplay 
+                                <SchemaDisplay
                                     schemaId={ `${schemaDef.schema_type}_${schemaDef.schema_type_version}` } 
                                     schema={schemaDef.schema} 
+                                    schemaType={schemaDef.schema_type}
                                 />
                             ))
                         }
