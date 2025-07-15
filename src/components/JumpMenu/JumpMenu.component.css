@@ -1,0 +1,17 @@
+.jump-menu {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background: #2d3142; /* Charcoal black */
+    color: #fdfffc;
+    flex: 1;
+}
+.jump-menu-body {
+    width: 100%;
+    height: auto;
+    padding: 1em;
+}
+.jump-menu-item {
+    padding: 0.4em 0.8em;
+    cursor: pointer;
+}

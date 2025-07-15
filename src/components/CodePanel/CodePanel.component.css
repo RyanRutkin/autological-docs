@@ -1,0 +1,23 @@
+.code-panel {
+    margin: 0;
+    padding: 0;
+    background: #0d1321; /* Charcoal black */
+    color: #fdfffc;
+    flex: 1;
+    flex-direction: column;
+}
+.code-panel-data {
+    flex: 1;
+}
+.code-panel-rules {
+    flex: 1;
+}
+.code-panel-button-row {
+    flex: auto;
+    text-align: center;
+    padding: 0.4em 0.8em;
+}
+.code-panel-results {
+    flex: 1 1 0%;
+    padding: 0.4em 0.8em;
+}

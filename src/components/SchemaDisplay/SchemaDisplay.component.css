@@ -1,0 +1,44 @@
+.app-schema {
+    padding: 0.8em 0;
+}
+.app-schema-is-child {
+    padding: 0.4em 0;
+}
+.app-schema-title {
+    font-size: 150%;
+    padding: 0 0 0.4em;
+}
+.app-schema-body {
+    padding: 0 0.8em;
+}
+.app-schema-properties-label {
+    padding: 0 0 0.2em;
+}
+.app-schema-property {
+    padding: 0.4em;
+}
+.app-schema-required-properties {
+    padding: 0.2em 0;
+    display: flex;
+    flex-direction: row;
+}
+.app-schema-required-properties-list {
+    flex: 1 1 0%;
+    padding: 0 0.2em;
+}
+.app-schema-property-detail-content {
+    display: flex;
+    flex-direction: row;
+}
+.app-schema-property-detail-label {
+    padding: 0 0.2em 0 0;
+}
+.app-schema-property-details {
+    margin: 0;
+}
+.app-schema-options {
+    padding: 0.8em 0 0;
+}
+.app-schema-options-body {
+    margin: 0;
+}

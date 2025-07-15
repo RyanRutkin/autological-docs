@@ -1,0 +1,24 @@
+.docs-page {
+    display: flex;
+    flex-direction: row;
+}
+.docs-page-body {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background: #4a5568; /* Charcoal black */
+    color: #fdfffc;
+    flex: 2;
+}
+.docs-page-body-content {
+    padding: 1rem;
+}
+.docs-page-title {
+    font-size: 300%;
+}
+.docs-page-links-section {
+    padding: 0.8em 0;
+}
+.docs-page-description {
+    padding: 0 0 0.8em;
+}
