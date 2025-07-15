@@ -2,7 +2,7 @@ import { FC, useContext, useEffect, useRef } from "react";
 import { JsonSchema, ValueOf } from "../../types/types";
 import './SchemaDisplay.component.css';
 import { JsonSchemaProperty } from "@ryanrutkin/autological-schema";
-import { AppHashLink } from "../AppHashLink/AppHaskLink.component";
+import { AppHashLink } from "../AppHashLink/AppHashLink.component";
 import { AppFocusContext } from "../../contexts/AppFocus.context";
 
 export const SchemaDisplay: FC<{

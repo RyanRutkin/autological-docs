@@ -22,3 +22,21 @@
 .docs-page-description {
     padding: 0 0 0.8em;
 }
+.docs-page-description-section {
+    padding: 0.4em 0;
+}
+.docs-page-description-section-label {
+    font-size: 150%;
+    padding: 0 0 0.4em;
+}
+.docs-page-code-block {
+    height: 15em;
+    overflow: auto;
+    background-color: #0d1321;
+    border-radius: 0.4em;
+    padding: 0 0.8em;
+    margin: 0.8em 0;
+}
+.docs-page-code-block.auto-height {
+    height: auto;
+}
