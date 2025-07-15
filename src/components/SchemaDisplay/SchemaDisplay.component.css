@@ -42,3 +42,19 @@
 .app-schema-options-body {
     margin: 0;
 }
+.app-schema-property-detail-value {
+    flex: 1 1 0%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.app-schema-property-detail-value-separator:last-child {
+    display: none;
+}
+.app-schema-property-detail-value-separator {
+    padding: 0 0.2em;
+    line-height: 1.2em;
+    font-weight: bold;
+}
+.app-schema-property-detail-value-literal {
+    color: #FAC898;
+}

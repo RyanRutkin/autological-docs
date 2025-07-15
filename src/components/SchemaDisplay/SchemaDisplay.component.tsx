@@ -9,6 +9,13 @@ export const SchemaDisplay: FC<{
     schema: Partial<JsonSchema>;
     isChild?: boolean;
 }> = ({ schemaId, schema, isChild }) => {
+    function getSchemaPropertyDetailItemValueEntry(key: string, value: string) {
+        return (
+            <div className={ `app-schema-property-detail-value-entry ${ key === 'const' || key === 'enum' ? 'app-schema-property-detail-value-literal' : ''}` } >
+                { key === 'const' || key === 'enum' ? '"' : '' }{ value }{ key === 'const' || key === 'enum' ? '"' : '' }
+            </div>
+        )
+    }
     function getSchemaPropertyDetailItem(key: string, value: ValueOf<JsonSchemaProperty>) {
         if (key === 'items') {
             return getSchemaProperties('Items', value as Record<string, JsonSchemaProperty | string>);
@@ -20,12 +27,16 @@ export const SchemaDisplay: FC<{
                     <div className="app-schema-property-detail-value" >
                         {
                             typeof value === 'string'
-                            ? value
+                            ? getSchemaPropertyDetailItemValueEntry(key, value)
                             : null
                         }
                         {
                             Array.isArray(value)
-                            ? value.join(' | ')
+                            ? value.map(subVal => (<>
+                                    { getSchemaPropertyDetailItemValueEntry(key, subVal) }
+                                    <div className="app-schema-property-detail-value-separator" >|</div>
+                                </>
+                            ))
                             : null
                         }
                     </div>
