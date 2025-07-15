@@ -2,7 +2,7 @@ import { FC } from "react";
 import { JsonSchema, ValueOf } from "../../types/types";
 import './SchemaDisplay.component.css';
 import { JsonSchemaProperty } from "@ryanrutkin/autological-schema";
-import { HashLink } from "react-router-hash-link";
+import { AppHashLink } from "../AppHashLink/AppHaskLink.component";
 
 export const SchemaDisplay: FC<{
     schemaId: string;
@@ -51,7 +51,7 @@ export const SchemaDisplay: FC<{
                     <div className="app-schema-property-detail-content" >
                         <div className="app-schema-property-detail-label" >$ref:</div>
                         <div className="app-schema-property-detail-value" >
-                            <HashLink to={`/#${ prop.$ref }`} >{ prop.$ref }</HashLink>
+                            <AppHashLink to={`/#${ prop.$ref }`} >{ prop.$ref }</AppHashLink>
                         </div>
                     </div>
                 </li>
@@ -72,7 +72,7 @@ export const SchemaDisplay: FC<{
                             <div className="app-schema-property-detail-content" >
                                 <div className="app-schema-property-detail-label" >$ref:</div>
                                 <div className="app-schema-property-detail-value" >
-                                    <HashLink to={`/#${ properties.$ref }`} >{ properties.$ref as string }</HashLink>
+                                    <AppHashLink to={`/#${ properties.$ref }`} >{ properties.$ref as string }</AppHashLink>
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,7 @@ export const SchemaDisplay: FC<{
                     schema.required
                     ? <div className="app-schema-required-properties" >
                         <div className="app-schema-required-properties-label" >Required: </div>
-                        <div className="app-schema-required-properties-list" >{ schema.required.join(', ') }</div>
+                        <div className="app-schema-required-properties-list" >{ schema.required.map(field => `"${field}"`).join(', ') }</div>
                     </div>
                     : null
                 }

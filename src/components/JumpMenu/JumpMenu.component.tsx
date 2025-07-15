@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { HashLink } from 'react-router-hash-link';
 import './JumpMenu.component.css';
+import { AppHashLink } from "../AppHashLink/AppHaskLink.component";
 
 export const JumpMenu: FC<{
     items: {
@@ -18,7 +18,7 @@ export const JumpMenu: FC<{
                         onClick={() => jumpTo(item.id)}
                         key={ `jump_item_${item.id}` }
                     >
-                        <HashLink to={`/#${item.id}`} >{ item.title }</HashLink>
+                        <AppHashLink to={`/#${item.id}`} >{ item.title }</AppHashLink>
                     </div>
                 ))
             }
